@@ -1,0 +1,13 @@
+.topbar{
+    width: 100%;
+    height: 2.5rem;
+    background: #D43C33;
+    text-align: center;
+}
+.topbar .logo{
+    max-width: 4.4375rem;
+    max-height: 0.78125rem;
+}
+.topbar a{
+    font-size: 0.46875rem;
+}
