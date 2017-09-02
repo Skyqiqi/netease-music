@@ -4,13 +4,12 @@
     left: 0;
     z-index: 1;
     padding: 0 0.3125rem;
-    width: 100%;
-    height: 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    height: 2rem;
     background: #D43C33;
-    text-align: center;
 }
 .topbar .logo{
     width: 4.4375rem;
@@ -20,99 +19,114 @@
     vertical-align: top;
 }
 .topbar a{
+    display: block;
     position: relative;
     padding: 0 0.3125rem;
     height: 0.9375rem;
     line-height: 0.9375rem;
     font-size: 0.46875rem;
-    color: #fff;
+    color: white;
 }
 .topbar a::after{
     content: "";
     width: 200%;
     height: 200%;
-    display: inline-block;
     position: absolute;
-    left: -1.25rem;
-    top:-0.46875rem;
-    border: 1px solid white;
-    border-radius: 30px;
-    transform:scale(0.5);
+    top: 0;
+    left: 0;
+    border:1px solid #fff;
+    border-radius: 37.5%/100%;
+    transform-origin: top left;
+    transform: scale(.5);
 }
 .globalTabs{
+    position: fixed;
+    top: 2rem;
+    left: 0;
+    z-index: 1;
     width: 100%;
     height: 1.25rem;
-    position: fixed;
-    top:0;
-    left: 0;
-    margin-top: 2rem;
-    z-index: 1;
-    text-align: center;
-}
-.globalTabs::after{
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    top:1.25rem;
-    width: 100%;
-    border-bottom: 1px solid #E8E8E8;
+    background: #fff;
 }
 .globalTabs .tabs{
     display: flex;
-    font-size:0.46875rem;
-    background: white;
+    position: relative;
+    height: 100%;
+    align-items: center;
 }
-.globalTabs .tabs li{
-    width: 33.33%;
+.globalTabs .tabs::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    border-bottom:2px solid #E8E8E8;
+    transform-origin: top left;
+    transform: scale(.5);
+}
+.globalTabs li{
+    width: 33.3333%;
+    height: 100%;
+    font-size: 0.46875rem;
+}
+.globalTabs li.active{
+    color: #d33a31;
+}
+.globalTabs li div{
     text-align: center;
 }
-.globalTabs .tabs li.active{
-    color:#d33a31;
-}
-.globalTabs .tabs li div{
-    height: 1.25rem;
-    display: inline-block;
-}
-.globalTabs .tabs li.active div{
-    border-bottom: 0.0625rem solid #D43C33;
-}
-.globalTabs .tabs li p{
+.globalTabs li div span{
+    position: relative;
     padding: 0 0.15625rem;
-    line-height: 1.25rem;
+    display: inline-block;
+    height:1.25rem;
+    line-height:1.25rem;
 }
-.playlists{
+.globalTabs li.active span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.03125rem;
+    z-index: 3;
+    width: 100%;
+    height: 0.125rem;
+    transform: scaleY(.5);
+    background: #d33a31;
+}
+.content{
     margin-top: 3.25rem;
-    padding-top: 0.625rem;
 }
-.playlists h2{
+.content .playlists{
+    padding-top: 0.625rem;
+    padding-bottom: 0.75rem;
+}
+.content .playlists h2{
     padding-left: 0.28125rem;
     margin-bottom: 0.4375rem;
     position: relative;
     font-size: 0.53125rem;
     color: #333;
 }
-.playlists h2::after{
-    position: absolute;
+.content .playlists h2::after{
     content: "";
-    display: block;
-    width:0.0625rem;
-    height: 0.5rem;
-    margin-top: -0.28125rem;
-    top:50%;
+    position: absolute;
     left: 0;
+    top: 50%;
+    margin-top: -0.28125rem;
+    width: 2px;
+    height: 0.5rem;
     background-color: #d33a31;
 }
-.playlists ol{
+.playlists .song-lists{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.playlists li{
-    font-size: 0.40625rem;
+.playlists .song-lists li{
     width: 32.8%;
-    position: relative;
     padding-bottom: 0.5rem;
+    position: relative;
+    font-size: 0.40625rem;
 }
 .playlists li .play-icon{
     position: absolute;
@@ -121,17 +135,17 @@
     font-size: 0.375rem;
     color:white;
     text-align: right;
-    padding-right: 0.125rem;
+    padding-top: 0.125rem;
+    padding-right: 0.1875rem;
     background: linear-gradient(180deg,rgba(0,0,0,.2),transparent)
-
 }
 .playlists li svg.lists-icon{
     width: 0.35rem;
     height: 0.35rem;
-    fill: white;
 }
-.playlists li img{
+.playlists .cover img{
     width: 100%;
+    vertical-align: top;
 }
 .playlists li p{
     display: -webkit-box;
@@ -141,9 +155,6 @@
     padding: 0.1875rem 0.0625rem 0 0.1875rem;
     line-height: 1.2;
     font-size:0.40625rem;
-}
-.songs{
-    padding-top: 0.625rem;
 }
 .songs h2{
     padding-left: 0.28125rem;
@@ -163,37 +174,39 @@
     left: 0;
     background-color: #d33a31;
 }
-.songs li{
-    display: flex;
-    position: relative;
-    padding-left: 0.3125rem;
+.songs .song-lists{
     font-size: 0.40625rem;
     color: #333;
 }
-.songs li::after{
+.songs .song-lists .songs-box{
+    padding-left: 0.3125rem;
+    display: flex;
+    height: 1.7rem;
+    position: relative;
+    overflow: hidden;
+}
+.songs .songs-box::after{
     content: "";
-    display: block;
     width: 100%;
     position: absolute;
-    top:1.7rem;
-    left: 0;
+    top:1.67rem;
+    left: 0.3125rem;
     border-bottom: 1px solid #EDEDEE;
 }
-.songs li .songs-box{
-    display: block;
+.songs .songs-box div{
     padding: 0.1875rem 0;
     width: 8.375rem;
 }
-.songs li .songs-box h3{
+.songs .songs-box h3{
     font-size: 0.53125rem;
     line-height: 1.5;
 }
-.songs li .songs-box p{
+.songs .songs-box p{
     font-size: 0.375rem;
     line-height: 0.5625rem;
     color: #888;
 }
-.songs li .songs-box span{
+.songs .songs-box p>span{
     display: inline-block;
     width: 0.375rem;
     height: 0.25rem;
@@ -201,46 +214,53 @@
     background: url(//s3.music.126.net/m/s/img/index_icon_2x.png?5207a28…) no-repeat;
     background-size: 166px 97px;
 }
-.songs li .songs-icon{
-    display: flex;
-    align-items: center;
+.songs .songs-icon{
+    padding: 0 0.3125rem;
+    height: 1.7rem;
     line-height: 1.7rem;
 }
-.songs li .songs-icon .icon-bofang{
-    display: inline-block;
+.songs .songs-icon .icon-bofang{
+    vertical-align: middle;
     width: 0.6875rem;
     height: 0.6875rem;
-    margin: 0 0.3125rem;
+
 }
-.ad{
+.footer{
+    position: relative;
+    padding-top: 53.3%;
     margin-top: 0.125rem;
-    padding-top: 1.2rem;
-    padding-bottom: 0.38rem;
-    background:url(//s3.music.126.net/m/s/img/recommand_bg_2x.png?d045fafc60e017b653f8065a87496922) no-repeat;
-    background-size: cover;
+    background: url(//s3.music.126.net/m/s/img/recommand_bg_2x.png?d045faf…) no-repeat;
+    background-size: contain;
 }
-.ad svg{
-    display: block;
-    margin: 0 auto;
+.footer .footer-wrap{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    text-align: center;
+}
+.footer .footer-wrap .svg-box{
+    padding-top: 1.2rem;
+}
+.footer .footer-wrap .svg-box svg{
+    vertical-align: top;
     width: 7.1875rem;
     height: 1.375rem;
 }
-.ad .link{
+.footer .footer-wrap .link{
     margin:0.46875rem 1.15625rem 0.15625rem;
     border: 1px solid #d33a31;
-    border-radius: 38px;
+    border-radius: 1.1875rem;
     font-size: 0.5rem;
-    text-align: center;
-}
-.ad .link a{
     line-height: 1.1875rem;
     color: #d33a31;
 }
-.ad p{
+.footer .footer-wrap .copyright{
     color: #888;
-    font-size: 0.375rem;
+    font-size: 12px;
     line-height: 0.5rem;
-    color: #888;
     -webkit-transform: scale(.75);
-    transform: scale(.75);
+    transform: scale(.75)
 }
+
