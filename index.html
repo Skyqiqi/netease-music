@@ -84,7 +84,7 @@
             </li>
         </ol>
     </div>
-    <div class="content" style="display: none;">
+    <div class="content"  style="display: none" >
         <div class="playlists">
             <h2>推荐歌单</h2>
             <ol class="song-lists">
@@ -378,7 +378,7 @@
             </div>
         </div>
     </div>
-    <div class="content" style="display: none;">
+    <div class="content" style="display: none">
         <div class="hot-wrap">
             <div class="hot-bar">
                 <div class="hot-pic"></div>
@@ -548,14 +548,36 @@
     </div>
     <div class="content">
         <form class="ipt" action="#" method="get">
-            <input type="text">
+            <div class="input-cover">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-sousuo"></use>
+                </svg>
+                <input type="search" name="search" class="input" placeholder="" value="" autocomplete="off">
+                <label class="holder">搜索歌曲、歌手、专辑</label>
+            </div>
         </form>
+        <div class="message">
+            <section class="m-hotlist"><h3 class="title">热门搜索</h3><ul class="list"><li class="item f-bd f-bd-full"><a class="link" href="javascript:void(0);">敦刻尔克</a></li><li class="item f-bd f-bd-full"><a class="link" href="javascript:void(0);">Taylor Swift</a></li><li class="item f-bd f-bd-full"><a class="link" href="javascript:void(0);">Maroon 5</a></li><li class="item f-bd f-bd-full"><a class="link" href="javascript:void(0);">BLACKPINK</a></li><li class="item f-bd f-bd-full"><a class="link" href="javascript:void(0);">春风吹</a></li><li class="item f-bd f-bd-full"><a class="link" href="javascript:void(0);">远走高飞</a></li><li class="item f-bd f-bd-full"><a class="link" href="javascript:void(0);">陈奕迅</a></li><li class="item f-bd f-bd-full"><a class="link" href="javascript:void(0);">差不多先生</a></li><li class="item f-bd f-bd-full"><a class="link" href="javascript:void(0);">Pg One</a></li><li class="item f-bd f-bd-full"><a class="link" href="javascript:void(0);">中国有嘻哈</a></li></ul></section>
+            <section class="m-history">
+                <ul class="list">
+                    <li class="item">
+                        <svg class="icon icon-lishijilu" aria-hidden="true">
+                            <use xlink:href="#icon-lishijilu"></use>
+                        </svg>
+                        <div>
+                            <span class="link f-thide">演员</span>
+                            <svg class="icon icon-cuowu" aria-hidden="true">
+                                <use xlink:href="#icon-cuowu"></use>
+                            </svg>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
     </div>
 </div>
 <script src="./jQuery/jquery.js"></script>
-<script src="//at.alicdn.com/t/font_355023_nj7pq0yulc9v0a4i.js"></script>
-<script>
-
-</script>
+<script src="//at.alicdn.com/t/font_355023_ptkardmfww5ewmi.js"></script>
+<script src="index.js"></script>
 </body>
 </html>
