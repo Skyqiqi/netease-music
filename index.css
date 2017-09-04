@@ -2,7 +2,7 @@
     position: fixed;
     top:0;
     left: 0;
-    z-index: 1;
+    z-index: 3;
     padding: 0 0.3125rem;
     display: flex;
     align-items: center;
@@ -43,15 +43,13 @@
     position: fixed;
     top: 2rem;
     left: 0;
-    z-index: 1;
+    z-index: 3;
     width: 100%;
-    height: 1.25rem;
     background: #fff;
 }
 .globalTabs .tabs{
     display: flex;
     position: relative;
-    height: 100%;
     align-items: center;
 }
 .globalTabs .tabs::after{
@@ -66,7 +64,6 @@
 }
 .globalTabs li{
     width: 33.3333%;
-    height: 100%;
     font-size: 0.46875rem;
 }
 .globalTabs li.active{
@@ -79,7 +76,6 @@
     position: relative;
     padding: 0 0.15625rem;
     display: inline-block;
-    height:1.25rem;
     line-height:1.25rem;
 }
 .globalTabs li.active span::after{
@@ -263,4 +259,127 @@
     -webkit-transform: scale(.75);
     transform: scale(.75)
 }
+.content .hot-wrap{
+    position: relative;
+    padding-top: 38.9%;
+    background: url(//s3.music.126.net/m/s/img/hot_music_bg_2x.jpg?f01a252…) no-repeat;
+    background-size: contain;
+}
+.content .hot-wrap::after{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: " ";
+    z-index: 1;
+    background-color: rgba(0,0,0,.2)
+}
+.content .hot-wrap .hot-bar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    padding-left: 0.625rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.content .hot-wrap .hot-bar .hot-pic{
+    width: 4.4375rem;
+    height: 2.094rem;
+    background: url(//s3.music.126.net/m/s/img/index_icon_2x.png?5207a28…) no-repeat -24px -30px;
+    background-size: 166px 97px;
+}
+.content .hot-wrap .hot-bar p{
+    margin-top: 0.3125rem;
+    font-size: 12px;
+    color: hsla(0,0%,100%,.8);
+    transform-origin: left top;
+    transform: scale(.91);
+}
+.content .songs-box{
+    padding-left: 0.3125rem;
+    display: flex;
+    color: #333;
+}
+.content .songs-box .hot-number{
+    display: flex;
+    align-items: center;
+    width: 0.875rem;
+    font-size: 17px;
+}
+.color1{
+    color: #df3436;
+}
+.color2{
+    color: #999;
+}
+.content .songs-box .layout{
+    width: 100%;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    position: relative;
+}
+.content .layout::after{
+    position: absolute;
+    z-index: 1;
+    content: "";
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    transform: scale(.5);
+    transform-origin: top left;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.content .layout .text{
+    padding: 0.1875rem 0;
+    flex: 1;
+}
+.content .layout .text h3{
+    font-size: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: normal;
+}
+.content .layout .text p{
+    font-size: 12px;
+    color: #888;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: normal;
+}
+.content .layout .text p>span{
+display: inline-block;
+width: 0.375rem;
+height: 0.25rem;
+margin-right: 0.125rem;
+background: url(//s3.music.126.net/m/s/img/index_icon_2x.png?5207a28…) no-repeat;
+background-size: 166px 97px;
+}
+.content .layout .text .songs-icon{
+padding: 0 0.3125rem;
+height: 1.7rem;
+line-height: 1.7rem;
+}
+.content .songs-box .layout .songs-icon{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+.content .songs-box .songs-icon .icon-bofang{
+    vertical-align: middle;
+    width: 0.6875rem;
+    height: 0.6875rem;
+}
+
+
 

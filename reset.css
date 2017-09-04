@@ -18,7 +18,7 @@ h1,h2,h3,h4{
 }
 body{
     background: #FCFCFD;
-    font-family: Helvetica, sans-serif;
+    font: 14px/1.5 Helvetica,sans-serif;
 }
 .icon {
     width: 1em; height: 1em;
